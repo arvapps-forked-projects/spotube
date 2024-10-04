@@ -3,7 +3,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:spotube/provider/authentication_provider.dart';
+import 'package:spotube/provider/authentication/authentication.dart';
 import 'package:spotube/utils/platform.dart';
 
 class WebViewLogin extends HookConsumerWidget {
@@ -27,7 +27,7 @@ class WebViewLogin extends HookConsumerWidget {
         child: InAppWebView(
           initialSettings: InAppWebViewSettings(
             userAgent:
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 afari/537.36",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 safari/537.36",
           ),
           initialUrlRequest: URLRequest(
             url: WebUri("https://accounts.spotify.com/"),
@@ -53,9 +53,7 @@ class WebViewLogin extends HookConsumerWidget {
               final cookieHeader =
                   "sp_dc=${cookies.firstWhere((element) => element.name == "sp_dc").value}";
 
-              authenticationNotifier.setCredentials(
-                await AuthenticationCredentials.fromCookie(cookieHeader),
-              );
+              await authenticationNotifier.login(cookieHeader);
               if (context.mounted) {
                 // ignore: use_build_context_synchronously
                 GoRouter.of(context).go("/");

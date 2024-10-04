@@ -2,7 +2,78 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [3.7.1](https://github.com/krtirtho/spotube/compare/v3.7.1...v3.7.1) (2024-06-06)
+## [3.8.2](https://github.com/krtirtho/spotube/compare/v3.8.0...v3.8.1) (2024-09-30)
+
+## Changes
+
+### Bug Fixes
+
+- endless song loading issue and no playback #1925
+
+
+## [3.8.1](https://github.com/krtirtho/spotube/compare/v3.8.0...v3.8.1) (2024-09-15)
+
+## Changes
+
+### Bug Fixes
+
+- **translations**: correct some basque incorrect translations (#1815)
+- **lyrics**: LRCLIB lyrics should be usable without logging in #1803
+- playlist displaying descriptions unescaped html #1784
+- **android**: pressing back while the player is open doesn't take to previous page
+- handle dublicated items in playback queue correctly #1852
+- **desktop**: scrollbar overlapping with more options of tracks and playlists
+- **discord**: stop discord rpc from try update presence when not connected
+- **stats**: minutes page shows plays and streams page shows minutes which should be the opposite #1880
+- **android**: clears queue upon swiping away notification
+- **player**: shuffle button state resets after closing page #1657
+- getting started page login page exception #1800
+- **mobile**: queue doesn't persist
+- local tracks takes time to load
+- start radio not working #1629
+
+### Features
+
+- **desktop**: show error dialog if webview is not found on login #1871
+- manually detect and define touch behavior #1763
+
+
+## [3.8.0](https://github.com/krtirtho/spotube/compare/v3.7.1...v3.8.0) (2024-06-06)
+
+### Features
+
+- translations: make state page's hard coded strings translatable (#1719)
+- discord: add listening activity type
+- discord: album art, playing time and play pause support (#1765)
+- linux: Use XDG_STATE_HOME to storage logs (#1675)
+- discord rpc for macOS, windows-arm64 and linux-arm64 (#1713)
+- desktop: implement webview based login
+- stats: add lazy loading support
+
+### Bug Fixes
+
+- translations: fix Russian translations (#1696)
+- ios: permission exception
+- linux: tray icon wrong name for flatpak
+- windows: app crashes when no internet
+- windows: local tracks plays but disabled playback controls
+- go to track album shows up for local tracks
+- local track metadata timeout
+- windows: window stretching #1553
+- android: app getting killed from background
+- linux: OS Media control not working for Flatpak #1627
+- incorrect datatype used for MPRIS position property #1521
+- Too many artists for a track causing overflows
+- playlist share button does not work #1639
+- unescape html escape values #1300
+- lyrics page doesn't scroll to top after song ends #885
+- changed source doesn't get saved and uses the wrong once again
+- null exception in album page navigated from /home
+- popup menu item opacity
+- linux: change app id in flatpak environment
+
+
+## [3.7.1](https://github.com/krtirtho/spotube/compare/v3.7.0...v3.7.1) (2024-06-06)
 
 
 ### Bug Fixes
